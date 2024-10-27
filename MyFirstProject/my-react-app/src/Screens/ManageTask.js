@@ -5,6 +5,33 @@ import { FaCheck } from "react-icons/fa";
 import { Card } from '../Components/Card';
 import { useState } from 'react';
 
+const initData = [
+    {
+        id: 1,
+        nameTask: "Task 1",
+        labels: [],
+        createDate: new Date(),
+        startDate: null,
+        doneDate: null,
+    },
+    {
+        id: 2,
+        nameTask: "Task 2",
+        labels: [],
+        createDate: new Date(),
+        startDate: new Date(),
+        doneDate: null,
+    },
+    {
+        id: 3,
+        nameTask: "Task 3",
+        labels: [],
+        createDate: new Date(),
+        startDate: new Date(),
+        doneDate: new Date(),
+    },
+]
+
 export const ManageTask = ()=>{
     const [isAdd, setIsAdd] = useState(false)
     const [newTask, setNewTask] = useState(null)
