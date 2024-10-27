@@ -1,0 +1,89 @@
+:root {
+    --dark-blue: #172B4D;
+    --dark-blue2: #44546F;
+    --blue : #789DBC;
+    --light-blue: #E8F0F5;
+    --orange: #F5B55D;
+    --light-orande: FDF6ED;
+    --green: #44B363;
+    --light-green: #E1F2E8;
+    --red: #CE6969;
+    --light-red: #FDF0F1;
+    --gray: #7E7E7E;
+    --light-gray: #F5F5F5
+}
+
+p {
+    margin: 0;
+}
+
+.wrap-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wrap-card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 16;
+    min-width: 200px;
+}
+
+.card-wrap-label {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+    margin: 10px 0;
+}
+
+.card-label {
+    color: var(--dark-blue);
+    background-color: var(--light-red);
+    padding: 8px 16px;
+    width: fit-content;
+    border-radius: 90px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.card-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+}
+
+.card-btn-green, .card-btn-red {
+    color: var(--green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4px;
+    border-radius: 90px;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-btn-red {
+    color: var(--red);
+}
+
+.card-btn-green:hover {
+    background-color: var(--light-green);
+    padding: 8px 16px;
+}
+
+.card-btn-red:hover {
+    background-color: var(--light-red);
+    padding: 8px 16px;
+}

@@ -1,0 +1,21 @@
+:root {
+  --dark-blue: #172B4D;
+  --dark-blue2: #44546F;
+  --blue : #789DBC;
+  --light-blue: #E8F0F5;
+  --orange: #F5B55D;
+  --light-orande: FDF6ED;
+  --green: #44B363;
+  --light-green: #E1F2E8;
+  --red: #CE6969;
+  --light-red: #FDF0F1;
+  --gray: #7E7E7E;
+  --light-gray: #F5F5F5
+}
+
+.App {
+  background-color: #E9E7F5;
+  padding: 20px;
+  height: fit-content;
+  box-sizing: border-box;
+}
