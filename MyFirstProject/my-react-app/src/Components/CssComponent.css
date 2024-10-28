@@ -42,6 +42,7 @@ p {
     flex-direction: row;
     column-gap: 4px;
     margin: 10px 0;
+    align-items: center;
 }
 
 .card-label {
@@ -58,10 +59,12 @@ p {
     width: 100%;
     display: flex;
     justify-content: end;
+    align-items: center;
     margin-top: 40px;
+    column-gap: 30px;
 }
 
-.card-btn-green, .card-btn-red {
+.card-btn-green, .card-btn-red , .btn-gray{
     color: var(--green);
     display: flex;
     flex-direction: row;
@@ -86,4 +89,55 @@ p {
 .card-btn-red:hover {
     background-color: var(--light-red);
     padding: 8px 16px;
+}
+
+.btn-gray {
+    color: var(--gray);
+}
+
+.btn-gray:hover {
+    background-color: var(--light-gray);
+    padding: 8px 16px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    padding: 20px 0;
+}
+
+.modal-sub-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    min-width: 90px;
+}
+
+.modal-sub-content {
+    font-size: 16px;
+    color: var(--dark-blue2);
+}
+
+.modal-wrap-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.modal-bottom {
+    font-size: 20px;
+}
+
+.my-modal {
+    margin: 40px 100px;
+    background-color: white;
+    border-radius: 20px;
+    height: 80%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    outline: none;
 }

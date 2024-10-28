@@ -17,5 +17,6 @@
   background-color: #E9E7F5;
   padding: 20px;
   height: fit-content;
+  min-height: 100vh;
   box-sizing: border-box;
 }
