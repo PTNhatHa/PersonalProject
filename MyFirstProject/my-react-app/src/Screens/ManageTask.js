@@ -3,27 +3,44 @@ import { TiPlus } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 import { Card } from '../Components/Card';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const initData = [
     {
-        id: 1,
+        idTask: 1,
         nameTask: "Task 1",
-        labels: [],
+        labels: [
+            {
+                idLabel: 1,
+                nameLabel: "design",
+                colorLanel: "#324856"
+            },
+            {
+                idLabel: 2,
+                nameLabel: "development",
+                colorLanel: "#324856"
+            },
+        ],
         createDate: new Date(),
         startDate: null,
         doneDate: null,
     },
     {
-        id: 2,
+        idTask: 2,
         nameTask: "Task 2",
-        labels: [],
+        labels: [
+            {
+                idLabel: 1,
+                nameLabel: "design",
+                colorLanel: "#324856"
+            },
+        ],
         createDate: new Date(),
         startDate: new Date(),
         doneDate: null,
     },
     {
-        id: 3,
+        idTask: 3,
         nameTask: "Task 3",
         labels: [],
         createDate: new Date(),
@@ -35,7 +52,22 @@ const initData = [
 export const ManageTask = ()=>{
     const [isAdd, setIsAdd] = useState(false)
     const [newTask, setNewTask] = useState(null)
-    
+    const [listData, setListData] = [initData]
+    const [taskTodo, setTaskTodo] = useState([])
+    const [taskInprogress, setTaskInprogress] = useState([])
+    const [taskDone, setTaskDone] = useState([])
+
+    useEffect(()=>{
+        setTaskTodo([])
+        setTaskInprogress([])
+        setTaskDone([])
+        listData.forEach(item=>{
+            if(item.doneDate) setTaskDone([...taskDone, item])
+            else if(item.startDate) setTaskInprogress([...taskInprogress, item])
+            else setTaskTodo([...taskTodo, item])
+        })
+    }, [listData])
+
     return(
         <div className="wrap-screen">
             <header>
@@ -48,7 +80,7 @@ export const ManageTask = ()=>{
                         </div>
                     :
                         <>
-                            <input className="input" placeholder='Write your new task'/>
+                            <input className="input" placeholder='Write your new task' value={newTask} onInput={(e)=>setNewTask(e.target.value)}/>
                             <div className="btn">
                                 <FaCheck  size={18}/>
                             </div>
@@ -65,24 +97,15 @@ export const ManageTask = ()=>{
             <main className='main-task'>
                 <section className="wrap-section wrap-section-todo">
                     <h3>Todo</h3>
-                    <div>
-                        <Card type={"todo"}/>
-                        <Card type={"todo"}/>
-                        <Card type={"todo"}/>
-                    </div>
+                    {taskTodo?.map(item => <Card type={"todo"} data={item} key={item.idTask}/>)}
                 </section>
                 <section className="wrap-section wrap-section-inprogress">
                     <h3>In Progress</h3>
-                    <div>
-                        <Card type={"progress"}/>
-                        <Card type={"progress"}/>
-                    </div>
+                    {taskInprogress?.map(item => <Card type={"progress"} data={item} key={item.idTask}/>)}
                 </section>
                 <section className="wrap-section wrap-section-done">
                     <h3>Done</h3>
-                    <div>
-                        <Card type={"done"}/>
-                    </div>
+                    {taskDone?.map(item => <Card type={"done"} data={item} key={item.idTask}/>)}
                 </section>
             </main>
         </div>
